@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col col__4 login">
+      <img src="/assets/logo_dark.png" alt="logo">
+      <h2>Please, log in to start chating</h2>
+
+      <div class="login__form">
+        <form [formGroup]="loginForm">
+          <mat-form-field>
+            <input matInput  type="text" placeholder="Email" formControlName="email" />
+            <mat-error *ngIf="email?.dirty && email?.hasError('required')">This field is required</mat-error>
+            <mat-error *ngIf="email?.dirty && email?.hasError('email')">Wrong format</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" formControlName="password"/>
+            <mat-error *ngIf="password?.dirty && password?.hasError('required')">This field is required</mat-error>
+            <mat-error *ngIf="password?.dirty && password?.hasError('minlength')">At least 8 characters</mat-error>
+            <mat-hint align="end">{{password?.value.length}}/8</mat-hint>
+          </mat-form-field>
+        </form>
+
+        <button mat-raised-button color="primary" (click)="login()">Log in</button>
+        <span>
+          If you don't have an account, please <a href="/register">Register</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

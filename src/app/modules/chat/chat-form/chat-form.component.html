@@ -1,0 +1,6 @@
+<div class="form">
+  <div class="form__input">
+    <textarea rows="4" [(ngModel)]="message" (keydown)="handleMessage($event)"></textarea>
+    <mat-icon (click)="sendMessage()">send</mat-icon>
+  </div>
+</div>

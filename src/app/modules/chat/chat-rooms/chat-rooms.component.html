@@ -1,0 +1,16 @@
+<div class="rooms">
+  <div class="rooms__header">
+    <span class="rooms__header-text">
+      <mat-icon class="">source</mat-icon> Rooms
+    </span>
+    <mat-icon (click)="openCreateDialog()" matTooltip="Click to create new room">add_box</mat-icon>
+  </div>
+
+  <div class="rooms__content">
+    <ng-container>
+      <div class="rooms__item" *ngFor="let room of rooms" (click)="changeRoom(room)">
+        <span class="rooms__item-name">{{room?.roomName}}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>

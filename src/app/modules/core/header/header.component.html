@@ -1,0 +1,15 @@
+<mat-toolbar class="header" color="primary">
+  <div class="header__logo">
+    <img src="/assets/logo_light.png" alt="">
+  </div>
+
+  <div class="header__content">
+    <mat-icon class="header__icon">account_circle</mat-icon>
+    Hello, {{user?.email}}
+  </div>
+
+  <div class="header__content">
+    <mat-icon class="header__icon" (click)="signOut()">exit_to_app</mat-icon>
+    Sign out
+  </div>
+</mat-toolbar>

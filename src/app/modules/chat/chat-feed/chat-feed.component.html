@@ -1,0 +1,12 @@
+<div #scroller class="feed">
+  <div class="feed__header">
+    <mat-icon>chat</mat-icon>
+    Messages to <span class="feed__header-room">{{room?.roomName}}</span>
+  </div>
+
+  <div class="feed__content">
+    <ng-container *ngFor="let message of messages">
+      <app-chat-message [message]="message"></app-chat-message>
+    </ng-container>
+  </div>
+</div>

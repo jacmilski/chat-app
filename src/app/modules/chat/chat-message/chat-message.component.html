@@ -1,0 +1,8 @@
+<div class="message" [ngClass]="{'message__guest': !isOnMessage, 'message__own': isOnMessage}">
+  <div class="message__content">
+    <span class="message__content-user">{{message?.username}}</span>
+    <span class="message__content-date">{{message?.timeSent}}</span>
+  </div>
+  <span class="message__message">{{message?.message}}</span>
+</div>
+

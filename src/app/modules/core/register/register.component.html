@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+      <div class="col col__4 login">
+        <img src="/assets/logo_dark.png" alt="logo">
+        <h2>Please, sign up to start chating</h2>
+
+        <div class="login__form">
+          <form [formGroup]="registerForm">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Email" formControlName="email"/>
+              <mat-error *ngIf="email?.dirty && email?.hasError('required')">This field is required!</mat-error>
+              <mat-error *ngIf="email?.dirty && email?.hasError('email')">Wrong format!</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password"/>
+              <mat-error *ngIf="password?.dirty && password?.hasError('required')">This field is required!</mat-error>
+              <mat-error *ngIf="password?.dirty && password?.hasError('minlength')">Minimum 8 characters</mat-error>
+              <mat-hint align="end">{{password?.value.length}}/8</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="text" placeholder="User name" formControlName="displayName"/>
+                <mat-error *ngIf="displayName?.dirty && displayName?.hasError('required')">This field is required!</mat-error>
+                <mat-error *ngIf="displayName?.dirty && displayName?.hasError('minlength')">Minimum 3 characters</mat-error>
+                <mat-error *ngIf="displayName?.dirty && displayName?.hasError('maxlength')">Maximum 15 characters</mat-error>
+              </mat-form-field>
+          </form>
+
+          <button mat-raised-button color="primary" (click)="register()">Sign up</button>
+          <span>
+            If you already have an account, please <a href="/login">Log in</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pre>
+    {{registerForm.value | json }}
+  </pre>
+

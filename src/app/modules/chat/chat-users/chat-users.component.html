@@ -1,0 +1,13 @@
+<div class="users">
+  <div class="users__header">
+    <mat-icon>group</mat-icon> Users
+  </div>
+
+  <div class="users__content">
+    <ng-container>
+      <div class="users__item" *ngFor="let user of users">
+        <span class="users__item-name">{{user?.displayName}}</span>
+      </div>
+    </ng-container>
+  </div>
+</div>
